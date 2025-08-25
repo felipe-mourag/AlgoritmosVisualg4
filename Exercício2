@@ -1,0 +1,23 @@
+algoritmo "CifradeCésar"
+var
+   m : vetor[1..4] de caractere
+   palavra , senha : caractere
+   chave,i,l: inteiro
+inicio
+chave <- 3
+palavra <- "time"
+escreva("Digite a senha: ")
+leia(senha)
+   para i <- 1 ate compr(palavra) faca
+       l <- asc(copia(palavra,i,1))
+       m[i] <- carac(l+chave)
+   fimpara
+   para i <- 1 ate compr(senha) faca
+   limpatela
+     se asc(copia(senha,i,1))= asc(m[i]) entao
+       escreval("   SENHA CORRETA   ")
+     senao
+       escreval("   SENHA INCORRETA ")
+     fimse
+   fimpara
+fimalgoritmo
