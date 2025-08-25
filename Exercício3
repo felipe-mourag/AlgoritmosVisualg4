@@ -1,0 +1,54 @@
+algoritmo "QuadradoMágico"
+var
+  m : vetor[1..3,1..3] de inteiro
+  somacoluna: vetor[1..3] de inteiro
+  somalinha: vetor[1..3] de inteiro
+  somadiagonal,c,l,i: inteiro
+  n : caractere
+inicio
+  para l <- 1 ate 3 faca
+    para c <- 1 ate 3 faca
+       escreval("Digite a posição ",l," , ",c, ": ")
+       leia(m[l,c])
+    fimpara
+  fimpara
+  limpatela
+  para l <- 1 ate 3 faca
+     para c <- 1 ate 3 faca
+        escreva(m[l,c]:5)
+     fimpara
+     escreval()
+  fimpara
+  escreval("==================================")
+  para i <- 1 ate 3 faca
+    para c <- 1 ate 3 faca
+     somalinha[i] <- m[i,c]+ somalinha[i]
+    fimpara
+  fimpara
+    para l <- 1 ate 3 faca
+      para i <- 1 ate 3 faca
+        somacoluna[i] <- m[l,i]+ somacoluna[i]
+      fimpara
+  fimpara
+  para l <- 1 ate 3 faca
+      para c <- 1 ate 3 faca
+        se (l=c) entao
+          somadiagonal <- m[l,c]+ somadiagonal
+        fimse
+      fimpara
+  fimpara
+  para i <- 1 ate 3 faca
+    se ( somacoluna[i] = somalinha[i] ) entao
+      se (somacoluna[i]=somadiagonal) entao
+            n <- "s"
+      fimse
+    senao
+           n <- "n"
+    fimse
+  fimpara
+  se n="s" entao
+    escreval("Está matriz é um quadrado mágico ")
+  senao
+    escreval("Está matriz não é um quadrado mágico ")
+  fimse
+fimalgoritmo
