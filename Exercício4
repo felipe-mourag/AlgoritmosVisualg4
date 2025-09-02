@@ -1,0 +1,17 @@
+algoritmo "BuscaPadraoString"
+var
+frase: caractere
+palavra: caractere
+posicao: inteiro
+inicio
+escreva("Digite uma frase: ")
+leia(frase)
+escreva("Digite a palavra que deseja buscar: ")
+leia(palavra)
+  posicao <- pos(palavra, frase)
+  se posicao > 0 entao
+      escreval("A palavra '", palavra, "' foi encontrada na posicao ", posicao, ".")
+  senao
+      escreval("A palavra '", palavra, "' nao foi encontrada na frase.")
+   fimse
+fimalgoritmo

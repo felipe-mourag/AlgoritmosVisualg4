@@ -1,0 +1,21 @@
+algoritmo "ConversãoDeString"
+var
+   m: caractere
+   l: vetor[1..2] de caractere
+   n: vetor[1..2] de inteiro
+   i: inteiro
+inicio
+   m <-"aaabb"
+   para i <- 1 ate compr(m) faca
+     se copia(m,i,1)= "a" entao
+       l[1] <- "a"
+       n[1] <- n[1] + 1
+     senao
+        se copia(m,i,1)= "b" entao
+          l[2] <- "b"
+          n[2] <- n[2] + 1
+        fimse
+     fimse
+   fimpara
+   escreva(l[1],n[1],l[2],n[2])
+fimalgoritmo
